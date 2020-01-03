@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
+    
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,6 @@
     "url": "https://github.com/lessly-zuniga/crud-notes/issues"
   },
   "homepage": "https://lessly-zuniga.github.io/crud-notes/",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "4.16.2",
