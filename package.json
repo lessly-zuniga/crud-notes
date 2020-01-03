@@ -17,7 +17,9 @@
   "bugs": {
     "url": "https://github.com/lessly-zuniga/crud-notes/issues"
   },
-  "homepage": "https://github.com/lessly-zuniga/crud-notes#readme",
+  "homepage": "https://lessly-zuniga.github.io/crud-notes/",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "4.16.2",
