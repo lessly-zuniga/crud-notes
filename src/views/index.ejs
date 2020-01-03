@@ -1,5 +1,9 @@
     <%- include('partials/_header'); -%>
-        
+        <!-- <pre>
+            <%- tasks -%>
+        </pre>     -->
+
+
         <div class="container">
             <div class="row">
                 <!--FORM-->
@@ -22,13 +26,29 @@
                  <!--LIST-->
                  <div class="col-md-7">
                      <table class=" table table-bordered table-hover">
-                         <thead>
-                             <tr></tr>
-                             <th>N°</th>
-                             <th>title</th>
-                             <th>description</th>
-                             <th>operation</th>
-                         </thead>
+                        <thead>
+                            <tr>
+                              <th>N°</th>
+                              <th>Title</th>
+                              <th>Description</th>
+                              <th>Operations</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% for(var i=0; i < tasks.length; i++) { %>
+                              <tr>
+                                <td><%= i + 1%></td>
+                                <td><strong><%= tasks[i].title %></strong></td>
+                                <td><%= tasks[i].description %></td>
+                                <td>
+
+                                    <a href="" class="btn btn-dark">Done</a>
+                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a href="" class="btn btn-info">Edit</a>
+                                </tr>
+                             <% } %>
+                         </tbody>
+                     
 
                      </table>
 

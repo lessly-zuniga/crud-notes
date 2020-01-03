@@ -3,14 +3,18 @@ const router = express.Router();
 
 const Task = require('../models/task');
 
-router.get('/', (req, res)=>{
-    res.render('index.ejs')
+router.get('/', async (req, res)=>{
+   const tasks = await Task.find();
+    res.render('index.ejs', {
+        tasks : tasks
+    })
 });
 
-router.post('/add', (req, res) =>{
-    console.group(new Task(req.body));
-   
-    res.send('received')
+router.post('/add', async(req, res) =>{
+
+    const task = new Task(req.body);
+    await task.save();
+    res.redirect('/');
 });
 
 module.exports = router;
