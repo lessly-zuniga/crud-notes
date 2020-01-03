@@ -1,12 +1,13 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const app = express();
+
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const app = express();
 
 //connecting to db 
-mongoose.connect('mongodb://localhost/crud-mongo')
+mongoose.connect('mongodb://localhost/crud-mongo', {useUnifiedTopology: true})
 .then(db => console.log('Db connected'))
 .catch(arr => console.log(err));
 
